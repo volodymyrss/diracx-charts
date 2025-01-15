@@ -65,7 +65,7 @@ securityContext:
 initCs:
   # Automatically initialize the repository in the CS volume
   enabled: true
-  podSecurityContext:
+  securityContext:
     fsGroup: 2000
 
 initSecrets:
