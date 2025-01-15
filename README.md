@@ -350,6 +350,7 @@ Note that this configuration is trivial and does not follow production recommand
 | ingress.enabled | bool | `true` |  |
 | ingress.tlsSecretName | string | `"myingress-cert"` |  |
 | initCs.enabled | bool | `true` |  |
+| initCs.securityContext.fsGroup | int | `2000` |  |
 | initOs.enabled | bool | `true` |  |
 | initSecrets.enabled | bool | `true` |  |
 | initSecrets.rbac.create | bool | `true` |  |
@@ -441,7 +442,7 @@ Note that this configuration is trivial and does not follow production recommand
 | rabbitmq.enabled | bool | `true` |  |
 | rabbitmq.podSecurityContext.enabled | bool | `false` |  |
 | replicaCount | int | `1` |  |
-| securityContext | object | `{}` |  |
+| securityContext.fsGroup | int | `2000` |  |
 | serviceAccount.annotations | object | `{}` | Annotations to add to the service account |
 | serviceAccount.create | bool | `true` | Specifies whether a service account should be created |
 | serviceAccount.name | string | `""` | The name of the service account to use. If not set and create is true, a name is generated using the fullname template |
