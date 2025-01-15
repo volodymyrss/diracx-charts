@@ -37,6 +37,8 @@ spec:
       {{- end }}
     spec:
       restartPolicy: Never
+      securityContext:
+        {{- toYaml .Values.initCs.securityContext | nindent 8 }}
       containers:
         - name: {{ .Chart.Name }}
           image: "{{ .Values.global.images.client }}:{{ .Values.global.images.tag | default .Chart.AppVersion }}"

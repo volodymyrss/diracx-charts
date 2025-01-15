@@ -47,11 +47,12 @@ serviceAccount:
 podAnnotations: {}
 
 podSecurityContext:
-  {}
-  # fsGroup: 2000
+  # {}
+  fsGroup: 2000
 
 securityContext:
-  {}
+  fsGroup: 2000
+  # {}
   # capabilities:
   #   drop:
   #   - ALL
@@ -64,6 +65,8 @@ securityContext:
 initCs:
   # Automatically initialize the repository in the CS volume
   enabled: true
+  podSecurityContext:
+    fsGroup: 2000
 
 initSecrets:
   enabled: true
